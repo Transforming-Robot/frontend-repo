@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
 import { useCounterStore } from './stores/App';
+import styled from 'styled-components';
+
+const Button = styled.button`
+  background-color: tomato;
+`;
 
 function App() {
   const [count, setCount] = useCounterStore((state) => [
@@ -21,7 +26,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={setCount}>count is {count}</button>
+        <Button onClick={setCount}>count is {count}</Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
