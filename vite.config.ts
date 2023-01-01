@@ -9,4 +9,10 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './config/test/setUpTest.js',
   },
+  resolve: {
+    alias: [
+      { find: '@components', replacement: '/src/components' },
+      { find: '@', replacement: '/src' },
+    ],
+  },
 });

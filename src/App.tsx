@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import reactLogo from './assets/react.svg';
-import './App.css';
+import '@/App.css';
 import { useCounterStore } from './stores/App';
 import styled from 'styled-components';
 
