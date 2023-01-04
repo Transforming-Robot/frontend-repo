@@ -8,6 +8,16 @@ import { Button } from '.';
 export default {
   title: 'atoms/Button',
   component: Button,
+  argTypes: {
+    label: {
+      name: 'label',
+      type: { name: 'string', required: true },
+      description: '버튼 label prop',
+      control: {
+        type: 'text',
+      },
+    },
+  },
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
@@ -71,19 +81,31 @@ ToRegisterButton.args = {
 export const ToChatButton = StyledButtonTemplate.bind({});
 ToChatButton.args = {
   label: '채팅 하러가기',
+  onClick: (event: React.MouseEvent) => {
+    console.log(event);
+  },
 };
 
 export const RegisterButton = StyledButtonTemplate.bind({});
 RegisterButton.args = {
   label: '가입하기',
+  onClick: (event: React.MouseEvent) => {
+    console.log(event);
+  },
 };
 
 export const LoginButton = StyledButtonTemplate.bind({});
 LoginButton.args = {
   label: '로그인',
+  onClick: (event: React.MouseEvent) => {
+    console.log(event);
+  },
 };
 
 export const SendMessageButton = StyledButtonTemplate.bind({});
 SendMessageButton.args = {
   label: '메시지 보내기',
+  onClick: (event: React.MouseEvent) => {
+    console.log(event);
+  },
 };
