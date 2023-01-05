@@ -9,14 +9,7 @@ export default {
   component: HorizontalBar,
 } as ComponentMeta<typeof HorizontalBar>;
 
-const Template: ComponentStory<typeof HorizontalBar> = () => <HorizontalBar />;
-
-const HorizontalBarComponent = styled(Template)`
-  width: 232px;
-  height: 1px;
-  background: #d6dadf;
-  border: 0;
-`;
+const HorizontalBarComponent = styled(HorizontalBar)``;
 
 const HorizontalBarTemplate: ComponentStory<
   typeof HorizontalBarComponent

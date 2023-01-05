@@ -6,16 +6,13 @@ const Container = styled.div`
 `;
 
 const HorizontalBarStyle = styled.hr`
-  width: 232px;
-  height: 1px;
-  background: #d6dadf;
-  border: 0;
+  border: none;
 `;
 
 export const HorizontalBar = () => {
   return (
     <Container data-testid="horizon-container">
-      <HorizontalBarStyle></HorizontalBarStyle>
+      <HorizontalBarStyle />
     </Container>
   );
 };
