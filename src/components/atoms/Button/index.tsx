@@ -8,10 +8,6 @@ interface Props {
 }
 
 const StyledButton = styled.button`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   padding: 10px 16px;
 
   background: #4880ee;
