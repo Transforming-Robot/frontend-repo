@@ -22,8 +22,8 @@ const bounce = keyframes`
 `;
 
 const Dot = styled.div`
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
 
   animation: ${bounce} 1s infinite;
