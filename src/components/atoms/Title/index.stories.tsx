@@ -9,13 +9,7 @@ export default {
   component: Title,
 } as ComponentMeta<typeof Title>;
 
-const Template: ComponentStory<typeof Title> = (args) => <Title {...args} />;
-
-const TitleComponent = styled(Template)`
-  color: 1A1E27;
-  font-family: 'Inter', sans-serif;
-  font-size: 50;
-`;
+const TitleComponent = styled(Title)``;
 
 const TitleTemplate: ComponentStory<typeof TitleComponent> = (args) => (
   <TitleComponent {...args} />
