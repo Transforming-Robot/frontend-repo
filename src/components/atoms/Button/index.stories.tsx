@@ -1,41 +1,111 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Button } from '.';
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
+  title: 'atoms/Button',
   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    label: {
+      name: 'label',
+      type: { name: 'string', required: true },
+      description: '버튼 label prop',
+      control: {
+        type: 'text',
+      },
+    },
   },
 } as ComponentMeta<typeof Button>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'Button',
+export const DefaultButton = Template.bind({});
+DefaultButton.args = {
+  label: '기본 버튼',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
+const StyledButton = styled(Button)`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+
+  background: #4880ee;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  border-radius: 8px;
+  border: 0;
+
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #3c68be;
+
+    cursor: pointer;
+  }
+
+  &:active {
+    background: #83b4f9;
+
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+`;
+
+const StyledButtonTemplate: ComponentStory<typeof StyledButton> = (args) => (
+  <StyledButton {...args} />
+);
+
+export const ToLoginButton = StyledButtonTemplate.bind({});
+ToLoginButton.args = {
+  onClick: (event: React.MouseEvent) => {
+    console.log(event);
+  },
+  label: '로그인 하러가기',
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
+export const ToRegisterButton = StyledButtonTemplate.bind({});
+ToRegisterButton.args = {
+  label: '회원가입 하러가기',
+  onClick: (event: React.MouseEvent) => {
+    console.log(event);
+  },
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+export const ToChatButton = StyledButtonTemplate.bind({});
+ToChatButton.args = {
+  label: '채팅 하러가기',
+  onClick: (event: React.MouseEvent) => {
+    console.log(event);
+  },
+};
+
+export const RegisterButton = StyledButtonTemplate.bind({});
+RegisterButton.args = {
+  label: '가입하기',
+  onClick: (event: React.MouseEvent) => {
+    console.log(event);
+  },
+};
+
+export const LoginButton = StyledButtonTemplate.bind({});
+LoginButton.args = {
+  label: '로그인',
+  onClick: (event: React.MouseEvent) => {
+    console.log(event);
+  },
+};
+
+export const SendMessageButton = StyledButtonTemplate.bind({});
+SendMessageButton.args = {
+  label: '메시지 보내기',
+  onClick: (event: React.MouseEvent) => {
+    console.log(event);
+  },
 };
