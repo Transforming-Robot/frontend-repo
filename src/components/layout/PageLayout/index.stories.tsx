@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { PageLayout } from '.';
-import { Title, Button, LoadingDots } from '@/components/atoms';
+import { Title, Button, LoadingDots, FormInput } from '@/components/atoms';
 
 export default {
   title: 'layouts/PageLayout',
@@ -15,19 +15,24 @@ const PageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
+`;
 
-  min-width: 50%;
-  min-height: 50%;
+const FormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+const ButtonContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;
 
 const Template: ComponentStory<typeof PageLayout> = (args) => (
   <PageLayout>{args.children}</PageLayout>
 );
-
-export const Default = Template.bind({});
-Default.args = {
-  children: <PageContainer>레이아웃 테스트</PageContainer>,
-};
 
 export const LoadingPage = Template.bind({});
 LoadingPage.args = {
@@ -38,21 +43,15 @@ LoadingPage.args = {
   ),
 };
 
-const MainPageButtonContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-`;
-
 export const MainPageBeforeLogin = Template.bind({});
 MainPageBeforeLogin.args = {
   children: (
     <PageContainer>
       <Title title="ChatterBox" />
-      <MainPageButtonContainer>
+      <ButtonContainer>
         <Button label="로그인 하러가기" />
         <Button label="회원가입 하러가기" />
-      </MainPageButtonContainer>
+      </ButtonContainer>
     </PageContainer>
   ),
 };
@@ -62,9 +61,46 @@ MainPageAfterLogin.args = {
   children: (
     <PageContainer>
       <Title title="ChatterBox" />
-      <MainPageButtonContainer>
+      <ButtonContainer>
         <Button label="채팅 하러가기" />
-      </MainPageButtonContainer>
+      </ButtonContainer>
+    </PageContainer>
+  ),
+};
+
+export const RegisterPage = Template.bind({});
+RegisterPage.args = {
+  children: (
+    <PageContainer>
+      <Title title="ChatterBox" />
+      <FormContainer>
+        <FormInput label="이메일" placeHolder="이메일을 입력해주세요" />
+        <FormInput label="비밀번호" placeHolder="비밀번호를 입력해주세요" />
+        <FormInput
+          label="비밀번호 중복체크"
+          placeHolder="비밀번호를 입력해주세요"
+        />
+        <FormInput label="닉네임" placeHolder="닉네임을 입력해주세요" />
+        <ButtonContainer>
+          <Button label="가입하기" />
+        </ButtonContainer>
+      </FormContainer>
+    </PageContainer>
+  ),
+};
+
+export const LoginPage = Template.bind({});
+LoginPage.args = {
+  children: (
+    <PageContainer>
+      <Title title="ChatterBox" />
+      <FormContainer>
+        <FormInput label="이메일" placeHolder="이메일을 입력해주세요" />
+        <FormInput label="비밀번호" placeHolder="비밀번호를 입력해주세요" />
+        <ButtonContainer>
+          <Button label="로그인" />
+        </ButtonContainer>
+      </FormContainer>
     </PageContainer>
   ),
 };
