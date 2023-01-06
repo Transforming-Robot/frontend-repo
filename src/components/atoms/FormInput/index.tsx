@@ -9,12 +9,14 @@ interface Props {
   onChange?: (event: React.ChangeEvent) => void;
 }
 
-const Container = styled.div``;
+const Container = styled.div`
+  position: relative;
+`;
 
 const Label = styled.div`
   position: absolute;
-  top: 12px;
-  left: 30px;
+  top: -4px;
+  left: 14px;
 
   font-family: 'Inter';
   font-style: normal;
