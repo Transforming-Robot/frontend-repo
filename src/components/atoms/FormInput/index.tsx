@@ -6,7 +6,7 @@ interface Props {
   label: string;
   placeHolder: string;
   value?: string;
-  onChange?: (event: React.ChangeEvent) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Container = styled.div`
