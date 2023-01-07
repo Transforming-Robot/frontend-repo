@@ -7,7 +7,13 @@ interface Props {
   onClick?: (event: React.MouseEvent) => void;
 }
 
+const Container = styled.div`
+  width: 100%;
+`;
+
 const StyledButton = styled.button`
+  width: 100%;
+
   padding: 14px 16px;
 
   background: #4880ee;
@@ -35,7 +41,9 @@ const StyledButton = styled.button`
 `;
 
 export const Button = ({ className, label, onClick }: Props) => (
-  <StyledButton className={className} onClick={onClick}>
-    {label}
-  </StyledButton>
+  <Container>
+    <StyledButton className={className} onClick={onClick}>
+      {label}
+    </StyledButton>
+  </Container>
 );
