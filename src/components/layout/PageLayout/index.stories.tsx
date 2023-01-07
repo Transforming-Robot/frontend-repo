@@ -4,6 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { PageLayout } from '.';
 import { Title, Button, LoadingDots, FormInput } from '@/components/atoms';
+import { RegisterForm } from '@/components/blocks';
 
 export default {
   title: 'layouts/PageLayout',
@@ -70,23 +71,7 @@ MainPageAfterLogin.args = {
 
 export const RegisterPage = Template.bind({});
 RegisterPage.args = {
-  children: (
-    <PageContainer>
-      <Title title="ChatterBox" />
-      <FormContainer>
-        <FormInput label="이메일" placeHolder="이메일을 입력해주세요" />
-        <FormInput label="비밀번호" placeHolder="비밀번호를 입력해주세요" />
-        <FormInput
-          label="비밀번호 중복체크"
-          placeHolder="비밀번호를 입력해주세요"
-        />
-        <FormInput label="닉네임" placeHolder="닉네임을 입력해주세요" />
-        <ButtonContainer>
-          <Button label="가입하기" />
-        </ButtonContainer>
-      </FormContainer>
-    </PageContainer>
-  ),
+  children: <RegisterForm />,
 };
 
 export const LoginPage = Template.bind({});
