@@ -12,6 +12,8 @@ interface Props {
 
 const Container = styled.div`
   position: relative;
+  width: fit-content;
+  height: fit-content;
 `;
 
 const Label = styled.div`
