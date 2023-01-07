@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { HorizontalBar } from '.';
 
 export default {
-  title: 'atom/HorizontalBar',
+  title: 'atoms/HorizontalBar',
   component: HorizontalBar,
 } as ComponentMeta<typeof HorizontalBar>;
 
