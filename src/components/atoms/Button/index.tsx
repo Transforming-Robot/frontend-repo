@@ -8,7 +8,7 @@ interface Props {
 }
 
 const StyledButton = styled.button`
-  padding: 10px 16px;
+  padding: 14px 16px;
 
   background: #4880ee;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
