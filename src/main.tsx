@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import App from '@/App';
 import './index.css';
+
 import { worker } from '@/api/mock/browser';
 
 if (process.env.NODE_ENV === 'development') {
