@@ -12,7 +12,7 @@ const Container = styled.div`
 const TitleStyle = styled.h1`
   color: 1A1E27;
   font-family: 'Inter', sans-serif;
-  font-size: 50;
+  font-size: 50px;
 `;
 
 export const Title = ({ className, title }: TitleProps) => {
