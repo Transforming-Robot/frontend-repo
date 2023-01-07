@@ -1,18 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
-  display: flex;
-`;
-
 const HorizontalBarStyle = styled.hr`
-  border: none;
+  width: 100%;
 `;
 
 export const HorizontalBar = () => {
-  return (
-    <Container data-testid="horizon-container">
-      <HorizontalBarStyle />
-    </Container>
-  );
+  return <HorizontalBarStyle data-testid="horizon-container" color="gray" />;
 };
