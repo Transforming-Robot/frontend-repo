@@ -1,12 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
+
 import { Title, FormInput, Button } from '@/components/atoms';
 import { useUserRegisterStore } from '@/stores';
+import { apiURL } from '@/common/apiURL';
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
 
   width: fit-content;
   height: fit-content;
@@ -16,6 +20,9 @@ const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  width: fit-content;
+  height: fit-content;
 `;
 
 export function RegisterForm() {
@@ -56,7 +63,10 @@ export function RegisterForm() {
           value={user.nickName}
           onChange={(event) => setUser(event.target.value, 'nickName')}
         />
-        <Button label="가입하기" />
+        <Button
+          label="가입하기"
+          onClick={() => axios.post(`${apiURL}/users/register`, user)}
+        />
       </FormContainer>
     </Container>
   );
