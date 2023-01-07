@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface Props {
+  id: string;
   className?: string;
   label: string;
   placeHolder: string;
@@ -46,6 +47,7 @@ const StyledInput = styled.input`
 `;
 
 export const FormInput = ({
+  id,
   className,
   label,
   placeHolder,
@@ -55,6 +57,7 @@ export const FormInput = ({
   <Container>
     <Label>{label}</Label>
     <StyledInput
+      id={id}
       className={className}
       placeholder={placeHolder}
       value={value}
