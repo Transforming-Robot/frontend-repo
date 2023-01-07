@@ -35,10 +35,10 @@ const StyledInput = styled.input`
   font-size: 14px;
   line-height: 14px;
 
-  border: 2px solid #64768c;
+  border: 1.8px solid #64768c;
   border-radius: 8px;
 
-  padding: 16px 12px;
+  padding: 12px 12px;
 
   &::placeholder {
     color: #b1b8c0;
