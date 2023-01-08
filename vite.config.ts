@@ -25,6 +25,8 @@ export default defineConfig({
       { find: '@pages', replacement: '/src/pages' },
       { find: '@stores', replacement: '/src/stores' },
       { find: '@components', replacement: '/src/components' },
+      { find: '@utils', replacement: '/src/utils' },
+      { find: '@hooks', replacement: '/src/hooks' },
     ],
   },
 } as VitestConfigExport);
