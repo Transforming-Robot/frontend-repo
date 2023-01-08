@@ -6,7 +6,7 @@ import { FormInput, Button, HorizontalBar } from '@/components/atoms';
 import { useUserRegisterStore } from '@/stores';
 import { apiURL } from '@/common/apiURL';
 
-const FormContainer = styled.div`
+const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -21,6 +21,15 @@ export function RegisterForm() {
     state.setUser,
   ]);
 
+  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setUser(event.target.value, event.target.id);
+  };
+
+  const onClickHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    axios.post(`${apiURL}/users/register`, user);
+  };
+
   return (
     <FormContainer>
       <HorizontalBar />
@@ -30,36 +39,35 @@ export function RegisterForm() {
         label="이메일"
         placeHolder="이메일을 입력해주세요"
         value={user.email}
-        onChange={(event) => setUser(event.target.value, 'email')}
+        onChange={onChangeHandler}
       />
       <FormInput
         id="password"
+        type="password"
         label="비밀번호"
         placeHolder="비밀번호를 입력해주세요"
         value={user.password}
-        onChange={(event) => setUser(event.target.value, 'password')}
+        onChange={onChangeHandler}
       />
       <FormInput
         id="passwordCheck"
+        type="password"
         label="비밀번호 중복확인"
         placeHolder="비밀번호를 입력해주세요"
         value={user.passwordCheck}
-        onChange={(event) => setUser(event.target.value, 'passwordCheck')}
+        onChange={onChangeHandler}
       />
       <FormInput
         id="nickName"
         label="닉네임"
         placeHolder="닉네임을 입력해주세요"
         value={user.nickName}
-        onChange={(event) => setUser(event.target.value, 'nickName')}
+        onChange={onChangeHandler}
       />
 
       <HorizontalBar />
 
-      <Button
-        label="가입하기"
-        onClick={() => axios.post(`${apiURL}/users/register`, user)}
-      />
+      <Button label="가입하기" onClick={onClickHandler} />
     </FormContainer>
   );
 }
