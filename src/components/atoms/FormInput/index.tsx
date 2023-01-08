@@ -4,6 +4,7 @@ import styled from 'styled-components';
 interface Props {
   id: string;
   className?: string;
+  type?: string;
   label: string;
   placeHolder: string;
   value?: string;
@@ -51,6 +52,7 @@ const StyledInput = styled.input`
 export const FormInput = ({
   id,
   className,
+  type,
   label,
   placeHolder,
   value,
@@ -61,6 +63,7 @@ export const FormInput = ({
     <StyledInput
       id={id}
       className={className}
+      type={type}
       placeholder={placeHolder}
       value={value}
       onChange={onChange}
