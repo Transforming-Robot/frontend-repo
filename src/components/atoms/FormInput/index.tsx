@@ -17,7 +17,7 @@ const Container = styled.div`
   height: fit-content;
 `;
 
-const Label = styled.div`
+const Label = styled.label`
   position: absolute;
   top: -4px;
   left: 14px;
@@ -59,7 +59,7 @@ export const FormInput = ({
   onChange,
 }: Props) => (
   <Container>
-    <Label>{label}</Label>
+    <Label htmlFor={id}>{label}</Label>
     <StyledInput
       id={id}
       className={className}
