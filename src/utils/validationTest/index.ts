@@ -1,4 +1,4 @@
-export function validationTest(id: string, value: string) {
+export function validationTest(id: string, value: string, password?: string) {
   let currentRegExp = new RegExp(``);
   switch (id) {
     case 'email':
@@ -11,7 +11,7 @@ export function validationTest(id: string, value: string) {
       break;
 
     case 'passwordCheck':
-      currentRegExp = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,15}$/;
+      currentRegExp = new RegExp(`^${password}$` || '');
       break;
 
     case 'nickName':
