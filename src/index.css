@@ -1,27 +1,33 @@
-#root {
-  max-width: 100vw;
-  max-height: 100vh;
-  
-  margin: 0 auto;
-  padding: 2rem;
-  
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
-  background-color: #FFFFFF;
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html {
+  color-scheme: dark light;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 100vw;
-  min-height: 100vh;
+  min-height: 100vh;;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+#root {
+  min-width: 100vw;
+  min-height: 100vh;
+  
+  margin: 0 auto;
+  
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
 }

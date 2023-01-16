@@ -38,8 +38,10 @@ const Label = styled.label`
   font-size: 12px;
   line-height: 12px;
 
-  color: #1a1e27;
-  background-color: #ffffff;
+  @media (prefers-color-scheme: light) {
+    color: #1a1e27;
+    background-color: #ffffff;
+  }
 `;
 
 const StyledInput = styled.input<StyledInputProps>`
